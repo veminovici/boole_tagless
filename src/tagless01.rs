@@ -17,7 +17,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_eval() {
+    fn test_final_simple_eval() {
         let e = add(lit(1), lit(2));
         assert_eq!(e, 3);
     }

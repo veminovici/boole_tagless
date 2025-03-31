@@ -1,7 +1,7 @@
 pub enum Expr {
-    Lit(i32),                       // literal
-    Neg(Box<Expr>),                 // negation
-    Add(Box<Expr>, Box<Expr>),      // addition
+    Lit(i32),                  // literal
+    Neg(Box<Expr>),            // negation
+    Add(Box<Expr>, Box<Expr>), // addition
 }
 
 impl Expr {
@@ -19,7 +19,6 @@ impl Expr {
 }
 
 impl Expr {
-
     pub fn eval(&self) -> i32 {
         match self {
             Self::Lit(n) => *n,
@@ -44,15 +43,14 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_eval() {
+    fn test_initial_eval() {
         let e = Expr::add(Expr::lit(1), Expr::lit(2));
         assert_eq!(e.eval(), 3);
     }
 
     #[test]
-    fn test_show() {
+    fn test_initial_show() {
         let e = Expr::add(Expr::lit(1), Expr::lit(2));
         assert_eq!(e.show(), "(1 + 2)");
     }
 }
-
